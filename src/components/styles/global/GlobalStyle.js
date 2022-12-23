@@ -16,7 +16,11 @@ const GlobalStyle = createGlobalStyle`
     background-repeat: no-repeat;
   }
 
-  ul {
+  main {
+    padding-bottom: 7.5rem;
+  }
+
+  ul, ol {
     list-style: none;
   }
 

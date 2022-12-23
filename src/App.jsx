@@ -1,10 +1,11 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import GlobalStyle from './styles/GlobalStyle';
+import GlobalStyle from './components/styles/global/GlobalStyle';
 import { ThemeContext } from './ThemeContext';
-import Container from './styles/shared/Container';
-import Header from './components/Header/Header';
+import Container from './components/styles/shared/StyledContainer';
+import Header from './components/Header';
+import Home from './components/Home/Home';
 
 function App() {
   const { theme } = React.useContext(ThemeContext);
@@ -17,7 +18,7 @@ function App() {
           <Header />
           <main>
             <Routes>
-              <Route path="" element="" />
+              <Route path="/" element={<Home />} />
               <Route path="" element="" />
               <Route path="" element="" />
             </Routes>

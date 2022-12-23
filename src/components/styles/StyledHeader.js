@@ -10,7 +10,7 @@ export const Header = styled.header`
 
 export const LinkList = styled.ul`
   display: flex;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.15);
   border-radius: 10rem;
   border: 1px solid rgba(136, 0, 239, 0.5);
 `;
@@ -26,10 +26,19 @@ export const Link = styled(NavLink)`
   transition: background-color 100ms;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.linkHover};
+    color: ${({ theme }) => theme.colors.navLinkHover};
   }
 
   &.active {
     background-color: ${({ theme }) => theme.colors.navLinkActive};
   }
+`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  gap: 1.5rem;
+`;
+
+export const IconButton = styled.button`
+  background-color: transparent;
 `;
