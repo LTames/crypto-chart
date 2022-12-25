@@ -31,6 +31,10 @@ export const Link = styled(NavLink)`
   &.active {
     background-color: ${({ theme }) => theme.colors.navLinkActive};
   }
+
+  @media (max-width: 400px) {
+    min-width: initial;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`

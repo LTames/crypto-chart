@@ -14,6 +14,7 @@ function MainChart({ coinId }) {
   const options = {
     chart: {
       width: '100%',
+      height: '100%',
       type: 'candlestick',
       toolbar: {
         show: false,

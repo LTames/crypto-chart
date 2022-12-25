@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from '../styles/StyledCoinHeader';
 
-function CoinHeader({ coinData }) {
+function CoinHeader({ coinData, frontPage }) {
   const {
     name,
     symbol,
@@ -12,18 +12,20 @@ function CoinHeader({ coinData }) {
     },
   } = coinData;
   return (
-    <S.CoinHeader>
+    <S.CoinHeader frontPage={frontPage}>
       <S.CoinIcon src={icon} alt="" />
-      <S.CoinName>{name}</S.CoinName>
-      <S.CoinSymbol>
+      <S.CoinName frontPage={frontPage}>{name}</S.CoinName>
+      <S.CoinSymbol frontPage={frontPage}>
         (
         {symbol.toUpperCase()}
         )
       </S.CoinSymbol>
-      <S.CoinPrice>
-        {price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
-      </S.CoinPrice>
-      <S.CoinChange change={change}>{change > 0 ? `+${change}%` : `${change}%`}</S.CoinChange>
+      <S.PricesWrapper>
+        <S.CoinPrice>
+          {price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+        </S.CoinPrice>
+        <S.CoinChange change={change}>{change > 0 ? `+${change}%` : `${change}%`}</S.CoinChange>
+      </S.PricesWrapper>
     </S.CoinHeader>
   );
 }

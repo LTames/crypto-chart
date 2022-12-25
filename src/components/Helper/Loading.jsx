@@ -15,6 +15,8 @@ const StyledLoading = styled.div`
   border-top-color: rgba(136, 0, 239, 0.8);
   animation: ${loadingAnimation} 800ms infinite;
   margin: 0 auto;
+  align-self: center;
+  justify-self: center;
 `;
 
 function Loading() {

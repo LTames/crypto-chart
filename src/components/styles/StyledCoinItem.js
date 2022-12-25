@@ -7,11 +7,25 @@ export const Coin = styled.li`
   padding: 0.875rem 0;
   border-bottom: 1px solid ${({ theme }) => theme.colors.detail};
   align-items: center;
+
+  @media (max-width: 980px) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  @media (max-width: 460px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
 `;
 
 export const CoinRankWrapper = styled.div`
   display: grid;
   grid-template-columns: 1.75rem auto 1fr;
+
+  @media (max-width: 460px) {
+    grid-template-columns: 1.75rem auto;
+    gap: 0.5rem;
+  }
 `;
 
 export const CoinRank = styled.span`
@@ -27,11 +41,28 @@ export const CoinLink = styled(Link)`
   }
 `;
 
-export const CoinNumericValue = styled.span`
+export const CoinSymbol = styled.span`
+  font-size: 0.875rem;
+
+  @media (max-width: 980px) {
+    display: none;
+  }
+`;
+
+export const CoinPrice = styled.span`
   font-size: 0.875rem;
 `;
 
-export const CoinChange = styled(CoinNumericValue)`
+export const CoinVolume = styled.span`
+  font-size: 0.875rem;
+
+  @media (max-width: 980px) {
+    display: none;
+  }
+`;
+
+export const CoinChange = styled.span`
+  font-size: 0.875rem;
   color: ${({ change }) => (change < 0 ? '#cd001e' : '#37b008')};
 `;
 
@@ -41,4 +72,8 @@ export const CoinIcon = styled.img`
   height: 24px;
   border-radius: 50%;
   overflow: hidden;
+
+  @media (max-width: 460px) {
+    display: none;
+  }
 `;

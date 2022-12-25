@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from '../styles/StyledCoinItem';
 
-function CoinItem({ data }) {
+function CoinItem({ data, mobile }) {
   const {
     id,
     symbol,
@@ -28,15 +28,15 @@ function CoinItem({ data }) {
       <S.CoinRankWrapper>
         <S.CoinRank>{rank}</S.CoinRank>
         <S.CoinIcon src={icon} alt="" />
-        <S.CoinLink to={`/coin/${id}`}>{name}</S.CoinLink>
+        <S.CoinLink to={`/coin/${id}`}>{mobile ? symbol.toUpperCase() : name}</S.CoinLink>
       </S.CoinRankWrapper>
-      <span>{symbol.toUpperCase()}</span>
-      <S.CoinNumericValue>{convertCurrency(priceUSD)}</S.CoinNumericValue>
+      <S.CoinSymbol>{symbol.toUpperCase()}</S.CoinSymbol>
+      <S.CoinPrice>{convertCurrency(priceUSD)}</S.CoinPrice>
       <S.CoinChange change={change}>
         {`${change > 0 ? '+' : ''}${change.toFixed(3)}`}
         %
       </S.CoinChange>
-      <S.CoinNumericValue>{convertCurrency(volume)}</S.CoinNumericValue>
+      <S.CoinVolume>{convertCurrency(volume)}</S.CoinVolume>
     </S.Coin>
   );
 }

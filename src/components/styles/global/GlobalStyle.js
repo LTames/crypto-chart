@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
   main {
     padding-top: 2.5rem;
-    padding-bottom: 7.5rem;
+    padding-bottom: 4rem;
     display: grid;
     gap: 4rem;
   }

@@ -6,6 +6,14 @@ export const TableHeader = styled.header`
   margin-bottom: 1rem;
   font-size: 0.875rem;
   font-weight: 300;
+
+  @media (max-width: 980px) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  @media (max-width: 460px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
 
 export const TableWrapper = styled.section`
@@ -24,4 +32,16 @@ export const TableContentWrapper = styled.div`
 
 export const TableContent = styled.ol`
   width: 100%;
+`;
+
+export const Symbol = styled.span`
+  @media (max-width: 980px) {
+    display: none;
+  }
+`;
+
+export const Volume = styled.span`
+  @media (max-width: 980px) {
+    display: none;
+  }
 `;

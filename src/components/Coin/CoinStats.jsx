@@ -32,8 +32,8 @@ function CoinStats({ coinId, frontPage }) {
   if (error) return <Error error={error} />;
   return (
     data && (
-      <section>
-        <CoinHeader coinData={data} />
+      <article>
+        <CoinHeader frontPage={frontPage} coinData={data} />
         <StyledTitle>Coin Stats</StyledTitle>
         <S.StatsWrapper frontPage={frontPage}>
           <S.StatsList frontPage={frontPage}>
@@ -52,7 +52,7 @@ function CoinStats({ coinId, frontPage }) {
           </S.StatsList>
           <MainChart coinId={coinId ?? id} />
         </S.StatsWrapper>
-      </section>
+      </article>
     )
   );
 }

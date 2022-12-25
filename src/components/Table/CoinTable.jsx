@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CoinItem from './CoinItem';
 import useFetch from '../../hooks/useFetch';
 import Loading from '../Helper/Loading';
@@ -10,7 +10,7 @@ function CoinTable({ numCoins }) {
   const {
     loading, error, data, request,
   } = useFetch();
-
+  const [width, setWidth] = useState(0);
   React.useEffect(() => {
     async function fetchCoins() {
       const { url } = COINS_GET();
@@ -19,6 +19,18 @@ function CoinTable({ numCoins }) {
 
     fetchCoins();
   }, [request]);
+
+  React.useEffect(() => {
+    function updateCurrentWidth() {
+      const windowWidth = window.innerWidth;
+      setWidth(windowWidth);
+    }
+
+    updateCurrentWidth();
+    window.addEventListener('resize', updateCurrentWidth);
+
+    return () => window.removeEventListener('resize', updateCurrentWidth);
+  }, []);
 
   function ordenaLista(lista) {
     return lista.sort(
@@ -30,10 +42,10 @@ function CoinTable({ numCoins }) {
     <S.TableWrapper>
       <S.TableHeader>
         <span>Name</span>
-        <span>Symbol</span>
+        <S.Symbol>Symbol</S.Symbol>
         <span>Price</span>
         <span>Change (24h)</span>
-        <span>Total Volume</span>
+        <S.Volume>Total Volume</S.Volume>
       </S.TableHeader>
       <S.TableContentWrapper>
         {loading ? (
@@ -43,7 +55,7 @@ function CoinTable({ numCoins }) {
             {data
               && ordenaLista(data)
                 .slice(0, numCoins)
-                .map((coin) => <CoinItem key={coin.id} data={coin} />)}
+                .map((coin) => <CoinItem key={coin.id} data={coin} mobile={width <= 980} />)}
           </S.TableContent>
         )}
       </S.TableContentWrapper>
