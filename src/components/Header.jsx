@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from './styles/StyledHeader';
 import { ReactComponent as Coin } from '../assets/btc.svg';
 import { ReactComponent as Home } from '../assets/home.svg';
-import { ReactComponent as Bookmark } from '../assets/bookmark.svg';
 import { ReactComponent as Moon } from '../assets/moon.svg';
 import { ReactComponent as Sun } from '../assets/sun.svg';
 import { ThemeContext } from '../ThemeContext';
@@ -30,9 +29,6 @@ function Header() {
       </nav>
 
       <S.ButtonsWrapper>
-        <S.IconButton>
-          <Bookmark fill={theme.colors.icon} />
-        </S.IconButton>
         <S.IconButton onClick={() => toggleTheme()}>
           {theme.name === 'light' ? <Sun /> : <Moon />}
         </S.IconButton>

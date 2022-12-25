@@ -6,6 +6,8 @@ import { ThemeContext } from './ThemeContext';
 import Container from './components/styles/shared/StyledContainer';
 import Header from './components/Header';
 import Home from './components/Home/Home';
+import CoinTable from './components/Table/CoinTable';
+import CoinStats from './components/Coin/CoinStats';
 
 function App() {
   const { theme } = React.useContext(ThemeContext);
@@ -19,8 +21,8 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="" element="" />
-              <Route path="" element="" />
+              <Route path="coins" element={<CoinTable />} />
+              <Route path="coin/:id" element={<CoinStats />} />
             </Routes>
           </main>
         </Container>

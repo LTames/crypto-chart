@@ -14,6 +14,7 @@ const StyledLoading = styled.div`
   border-radius: 50%;
   border-top-color: rgba(136, 0, 239, 0.8);
   animation: ${loadingAnimation} 800ms infinite;
+  margin: 0 auto;
 `;
 
 function Loading() {

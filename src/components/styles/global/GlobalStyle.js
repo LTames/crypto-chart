@@ -17,7 +17,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
+    padding-top: 2.5rem;
     padding-bottom: 7.5rem;
+    display: grid;
+    gap: 4rem;
   }
 
   ul, ol {
@@ -41,6 +44,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .stars, .stars2, .stars3 {
+    z-index: -1;
+    position: absolute;
+    top: 0px;
     --star: ${({ theme }) => theme.colors.stars};
   }
 
@@ -318,7 +324,7 @@ const GlobalStyle = createGlobalStyle`
 
   @keyframes starsAnimation {
     0% {
-      translate: 0 0px;
+      translate: 0px 0px;
       opacity: 0;
     }
 

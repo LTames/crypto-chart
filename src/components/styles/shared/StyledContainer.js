@@ -2,10 +2,8 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   max-width: 1440px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 2rem;
+  margin: 0 auto;
 `;
 
 export default Container;

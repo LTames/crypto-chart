@@ -28,12 +28,12 @@ function CoinItem({ data }) {
       <S.CoinRankWrapper>
         <S.CoinRank>{rank}</S.CoinRank>
         <S.CoinIcon src={icon} alt="" />
-        <S.CoinLink to={`/coins/${id}`}>{name}</S.CoinLink>
+        <S.CoinLink to={`/coin/${id}`}>{name}</S.CoinLink>
       </S.CoinRankWrapper>
       <span>{symbol.toUpperCase()}</span>
       <S.CoinNumericValue>{convertCurrency(priceUSD)}</S.CoinNumericValue>
       <S.CoinChange change={change}>
-        {`${change > 0 ? '+' : ''}${change.toFixed(2)}`}
+        {`${change > 0 ? '+' : ''}${change.toFixed(3)}`}
         %
       </S.CoinChange>
       <S.CoinNumericValue>{convertCurrency(volume)}</S.CoinNumericValue>

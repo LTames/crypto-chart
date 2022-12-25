@@ -6,4 +6,14 @@ export function COINS_GET() {
   };
 }
 
-export function COIN_GET() {}
+export function COIN_CHART_DATA_GET(coinId) {
+  return {
+    url: `${API_URL}/coins/${coinId}/ohlc?vs_currency=usd&days=365`,
+  };
+}
+
+export function COIN_GET(coinId) {
+  return {
+    url: `${API_URL}/coins/${coinId}`,
+  };
+}
