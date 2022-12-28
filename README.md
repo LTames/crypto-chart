@@ -1,4 +1,4 @@
 # crypto-chart
-App para consulta de indicadores básicos de criptoativos feito com React.js e styled-components.
+Aplicativo desenvolvido com React, Styled Components e a utilização de uma biblioteca externa para a ilustração de gráficos gerados através de dados enviados por uma API externa de criptomoedas.
 
 Hospedado em: (https://crypto-chart-ltames.vercel.app/)
