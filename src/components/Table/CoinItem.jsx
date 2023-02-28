@@ -6,13 +6,11 @@ function CoinItem({ data, mobile }) {
     id,
     symbol,
     name,
-    image: { small: icon },
-    market_data: {
-      market_cap_rank: rank,
-      current_price: { usd: priceUSD },
-      price_change_percentage_24h: change,
-      total_volume: { usd: volume },
-    },
+    image: icon,
+    market_cap_rank: rank,
+    current_price: priceUSD,
+    price_change_percentage_24h: change,
+    total_volume: volume,
   } = data;
 
   function convertCurrency(value) {

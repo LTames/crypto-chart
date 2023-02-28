@@ -2,7 +2,7 @@ const API_URL = 'https://api.coingecko.com/api/v3';
 
 export function COINS_GET() {
   return {
-    url: `${API_URL}/coins`,
+    url: `${API_URL}/coins/markets/?vs_currency=usd`,
   };
 }
 

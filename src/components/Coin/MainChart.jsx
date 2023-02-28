@@ -76,7 +76,7 @@ function MainChart({ coinId }) {
       setSeries([
         {
           name: 'candle',
-          data: json.map(([date, ...ohlc]) => ({
+          data: json?.map(([date, ...ohlc]) => ({
             x: new Date(date),
             y: ohlc,
           })),

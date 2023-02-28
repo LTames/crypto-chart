@@ -33,9 +33,7 @@ function CoinTable({ numCoins }) {
   }, []);
 
   function ordenaLista(lista) {
-    return lista.sort(
-      ({ market_data: { market_cap_rank: a } }, { market_data: { market_cap_rank: b } }) => a - b,
-    );
+    return lista.sort(({ market_cap_rank: a }, { market_cap_rank: b }) => a - b);
   }
 
   return (
